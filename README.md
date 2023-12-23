@@ -7,6 +7,7 @@ Learning from:
 - https://en.wikipedia.org
 - https://stackoverflow.com
 - https://www.youtube.com/@BroCodez
+- https://en.cppreference.com/
 
 ## Things I Learned
 
@@ -27,20 +28,6 @@ In computer science, a data buffer (or jsut buffer) is a region of a memory used
 Buffers can be implemented in a fixed memory location in hardware or by using a virtual data buffer in software that points at a location in the physical memory.  
 Buffers can increase application performance by allowing synchronous operations such as file reads or writes to complete quickly instead of blocking while waiting for hardware interrupts to access a physical disk subsystem; instead, an operating system can immediately return a successful result from an API call, allowing an application to continue processing while the kernel completes the disk operation in the background.  
 Further benefits can be achieved if the application is reading or writing small blocks of data that do not correspond to the block size of the disk subsystem, which allows a buffer to be used to aggregate many smaller read or write operations into block sizes that are more efficient for the disk subsystem, or in the case of a read, sometimes to completely avoid having to physically access a disk.
-
-### `getline()`
-
-To read a line of input, use `getline()`.
-
-```c
-ssize_t getline(char **lineptr, size_t *n, FILE *stream)
-```
-
-- `lineptr`: a pointer to the variable we use to point to the buffer containing the read line.  
-- If it set to `NULL`, it is mallocatted by `getline` and should thus be freed by the user, even if the command fails.
-- `n`: a pointer to the variable we use to save the size of allocated buffer.
-- `stream`: the input stream to read from.
-- `return value`: the number of bytes read, which may be less than the size of the buffer.
 
 ### C Infinite Loop
 
