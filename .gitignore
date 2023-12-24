@@ -55,8 +55,8 @@ dkms.conf
 
 db
 
-Gemfile.*
+Gemfile*
 .rspec
 .bundle/
 bin/
-!spec/spec_helper.rb
+spec/spec_helper.rb
