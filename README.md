@@ -8,6 +8,7 @@ Learning from:
 - https://stackoverflow.com
 - https://www.youtube.com/@BroCodez
 - https://en.cppreference.com/
+- https://www.youtube.com/@NeuralNine
 
 ## Things I Learned
 
@@ -58,3 +59,13 @@ In computer programming, an enumerated type (also called enumeration, enum, or f
 The enumerator names are usually identifiers that behave as constants in the language.  
 A variable that has been declared as having an enumerated type can be assigned any of the enumerators as a value.  
 In other words, an enumerated type has values that are different from each other, and that can be compared and assigned, but are not specified by the programmer as having any particular concrete representation in the computer's memory; compilers and interpreters can represent them arbitrarily.
+
+### `scanf` Vulnerabilities
+
+`scanf` is vulnerable to format string attacks. Great care should be taken to ensure that the formatting string includes limitations for string and array sizes.  
+In most cases the input string size from a user is arbitrary and cannot be determined before the scanf function is executed.  
+This means that `%s` placeholders without length specifiers are inherently insecure and exploitable for buffer overflows.  
+Another potential problem is to allow dynamic formatting strings, for example formatting strings stored in configuration files or other user-controlled files.  
+In this case the allowed input length of string sizes cannot be specified unless the formatting string is checked beforehand and limitations are enforced.  
+Related to this are additional or mismatched formatting placeholders which do not match the actual `vararg` list.  
+These placeholders might be partially extracted from the stack or contain undesirable or even insecure pointers, depending on the particular implementation of `varargs`.
